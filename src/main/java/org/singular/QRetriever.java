@@ -13,7 +13,7 @@ public class QRetriever {
             try {
 
                 // Create a ConnectionFactory
-                ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://esb-b-test.erfurt.elex.be:61601");
+                ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://esb-b-uat.erfurt.elex.be:61601");
 
                 // Create a Connection
                 Connection connection = connectionFactory.createConnection();
@@ -30,7 +30,7 @@ public class QRetriever {
                 // Create a MessageConsumer from the Session to the Topic or Queue
                 MessageConsumer consumer = session.createConsumer(destination);
 
-                File file = new File(System.getProperty("user.home") + "/Documents/multitestEvents.txt");
+                File file = new File(System.getProperty("user.home") + "/Documents/multitestEventsUAT01-09-2.txt");
                 // Wait for a message
                 Message message = consumer.receive(1000);
                 do {

@@ -28,7 +28,7 @@ public class QSender {
                 MessageProducer producer = session.createProducer(destination);
                 producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 
-                File file = new File(getClass().getClassLoader().getResource("multitestEvents.txt").getFile());
+                File file = new File(getClass().getClassLoader().getResource("toRemove/multitestEvents.txt").getFile());
                 List<String> lines = FileUtils.readLines(file);
                 for(String line : lines) {
                     TextMessage message = session.createTextMessage(line);
